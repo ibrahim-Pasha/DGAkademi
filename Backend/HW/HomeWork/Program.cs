@@ -36,9 +36,9 @@ namespace HomeWork
                     throw new CreditCardException("kullanma tarihi yalnış  girdiniz");
                 }
             }
-            catch (Exception )
+            catch (Exception ex)
             {
-               new CreditCardException("Kredi bilgileri yalnış girildi");
+               new CreditCardException(ex.Message);
             }
 
             Console.WriteLine("Kart Numaranız : " + creditCard.CardNumber);
