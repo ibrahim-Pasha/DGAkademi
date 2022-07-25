@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeWork
 {
-    public class CreditCardException:Exception
+    public class CreditCardException : Exception
     {
         public CreditCardException(string message)
         {
