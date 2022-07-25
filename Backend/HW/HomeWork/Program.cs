@@ -35,15 +35,16 @@ namespace HomeWork
                 {
                     throw new CreditCardException("kullanma tarihi yalnış  girdiniz");
                 }
+                Console.WriteLine("Kart Numaranız : " + creditCard.CardNumber);
+                Console.WriteLine("Kartınızın son kullanma tarihi : " + creditCard.ExpireDate);
+                Console.WriteLine("Kartınızın cvc numarası : " + creditCard.Cvc);
             }
             catch (Exception ex)
             {
                new CreditCardException(ex.Message);
             }
 
-            Console.WriteLine("Kart Numaranız : " + creditCard.CardNumber);
-            Console.WriteLine("Kartınızın son kullanma tarihi : " + creditCard.ExpireDate);
-            Console.WriteLine("Kartınızın cvc numarası : " + creditCard.Cvc);
+            
         }
     }
 }
