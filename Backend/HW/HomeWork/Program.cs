@@ -22,10 +22,8 @@ namespace HomeWork
                 creditCard.Cvc = Convert.ToInt32(Console.ReadLine());
                 if (creditCard.Cvc > 999 || creditCard.Cvc < 0)
                 {
-                    Console.WriteLine("cvc numarası 3 numaradan oluşmaktadır");
                     throw new CreditCardException("cvc numarası 3 numaradan oluşmaktadır");
                 }
-
                 Console.Write(" son kullanma tarihi (01/22) formatında olacak şekilde giriniz : ");
                 creditCard.ExpireDate = Console.ReadLine();
                 string[] dates = creditCard.ExpireDate.Split(new char[] { '/' });
