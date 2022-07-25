@@ -26,12 +26,16 @@ namespace HomeWork
                 }
                 Console.Write(" son kullanma tarihi (01/22) formatında olacak şekilde giriniz : ");
                 creditCard.ExpireDate = Console.ReadLine();
+                if (creditCard.ExpireDate.Length != 5)
+                {
+                    throw new CreditCardException("kullanma tarihi yalnış  girdiniz");
+                }
                 string[] dates = creditCard.ExpireDate.Split(new char[] { '/' });
                 int[] dateIntFormat = Array.ConvertAll(dates, int.Parse);
 
-                if (creditCard.ExpireDate.Length != 5 && (dateIntFormat[0] <= DateTime.Now.Month && dateIntFormat[1] < dateOfYear) || dateIntFormat[1] < dateOfYear)
+                if ((dateIntFormat[0] <= DateTime.Now.Month && dateIntFormat[1] < dateOfYear) || dateIntFormat[1] < dateOfYear)
                 {
-                    throw new CreditCardException("kullanma tarihi yalnış  girdiniz");
+                    throw new CreditCardException("kullanma tarihi geçmiş");
                 }
                 Console.WriteLine("Kart Numaranız : " + creditCard.CardNumber);
                 Console.WriteLine("Kartınızın son kullanma tarihi : " + creditCard.ExpireDate);
