@@ -1,0 +1,136 @@
+body{
+    padding: 5%;
+    font-family: 'Mulish', sans-serif;
+    box-sizing: border-box;
+}
+.head1{
+font-weight: bolder;
+stroke: black;
+fill: #110E47;
+font-family: 'Merriweather', serif;
+font-size: larger;
+}
+.first{
+    display:flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.titel{
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+   display: flex;
+  justify-content: space-between;
+    margin-top: 30px;
+font-weight: bolder;
+margin-bottom: 10px;
+}
+.titel button{
+    border: 1px solid #b7b7b7;
+    border-radius: 100px;
+    opacity: 0.4;
+    gap: 10px;
+    width: 65px;
+    height: 24px;
+    font-size: 12px;
+    background-color: white;
+
+}
+.movi1{
+    display: flex;
+margin-bottom: 20px;
+
+
+}
+
+.movi2{
+    display: flex;
+    margin-bottom: 20px;
+
+}
+.movi3{
+    display: flex;
+    margin-bottom: 20px;
+
+}
+.movi4{
+    display: flex;
+}
+.description{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.filmName{
+   
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+    font-size: small;
+    margin-bottom: 10px;
+}
+
+.star{
+    display: flex;
+    flex-direction: row ;
+    float:left ;
+    color: rgb(163, 163, 163);
+    font-family: 'Mulish', sans-serif;
+font-size: small;
+    
+}
+.staricon{
+    margin-right: 5px;
+}
+.threebutton{
+  
+}
+.threebutton button{
+    border: 1px solid #b7b7b7;
+    border-radius: 100px;
+    opacity: 0.4;
+    gap: 10px;
+    width: 59px;
+    height: 21px;
+    font-size: 12px;
+    background-color: white;
+color: #003ac2;
+    background: #DBE3FF;
+ font-weight: 600;
+ margin-top: 15px;
+ 
+}
+.twobutton button{
+    border: 1px solid #b7b7b7;
+    border-radius: 100px;
+    opacity: 0.4;
+    gap: 10px;
+    width: 75px;
+    height: 22px;
+    font-size: 12px;
+    background-color: white;
+color: #003ac2;
+    background: #DBE3FF;
+ font-weight: 600;
+ margin-top: 15px;
+}
+.time{
+    display: flex;
+}
+.time img{
+    margin-top: 12px;
+    height: 15px;
+    float: left;
+    margin-right: 5px;
+}
+.time h3{
+    margin-top: 12px;
+font-weight: 200;
+font-size: small;
+}
+.footer{
+    margin-top: 40px;
+    display: flex;
+  justify-content: space-between;
+  margin-left: 28px;
+  margin-right: 20px;
+
+}

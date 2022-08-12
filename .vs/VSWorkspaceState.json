@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Backend",
+    "\\Backend\\HW\\HomeWork",
+    "\\Backend\\W-1"
   ],
-  "SelectedNode": "\\HomeWork.sln",
+  "SelectedNode": "\\Backend\\W-1",
   "PreviewInSolutionExplorer": false
 }

@@ -1,0 +1,207 @@
+.filmimg img{position: absolute;
+    width: 100%;
+}
+*{box-sizing: border-box;
+margin: 0px;
+padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.icones{
+   display:flex;
+   justify-content: space-between;
+   margin-top: 60px;
+   margin-left: 25px;
+   margin-right: 25px;
+   font-size: larger;   
+}
+.icones a{
+   color: white;  
+}
+.play a{  
+    padding: 8px;
+    padding-top: 11px;
+    padding-left: 16px;
+    padding-right: 14px;
+    color: rgb(3, 6, 91);
+    font-size: 23px;
+    margin-left: 43%;
+    background-color: white;
+    margin-top: 12%;
+    position: absolute;
+    border-radius: 58%;
+}
+.play h3{ 
+    margin-left: 35%;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    position: absolute;
+    margin-top: 26%;
+}
+.mask{
+    background-image: url("../images/image 9.png");
+    position: absolute;
+width: 375px;
+height: 300px;
+left: 0px;
+top: 0px;
+z-index: 1;
+}
+.acıklama{background-color: white;
+    position: absolute;
+    margin-top: 67%;
+  display: flex;
+  justify-content:space-around;
+  z-index: 100;
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  border-radius: 12px;
+}
+.acıklama h2{
+    font-size: 19px;
+    letter-spacing: 1px;
+}
+.acıklama .save{
+    margin-top: 4px;
+    height: 21px;
+}
+.tur{
+    background-color: white;
+    position: absolute;
+    margin-top: 87%;
+    z-index: 200;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.tur img{
+    margin-left: 25px;
+    width: 13px;
+    margin-right: 5px;
+}
+.tur h5{
+font-weight: 550;
+color: rgb(147, 147, 147);
+margin-right: 200px;
+}
+
+.buttons{
+    margin-top: 15px;
+    margin-left: 25px;
+}
+.buttons button{
+    color: rgb(0, 21, 125);
+    background-color: rgb(174, 204, 255);
+    border: 1px solid #b7b7b7;
+    border-radius: 100px;
+    opacity: 0.4;
+    gap: 10px;
+    width: 70px;
+    height: 18px;
+    font-size: 10px;
+    font-weight: 600;
+   
+}
+.bilgiustu{
+    display: flex;
+    justify-content: space-around;
+    margin-left: -6px;
+    background-color: white;
+    position: absolute;
+    margin-top: 107%;
+    z-index: 200;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+   line-height: 23px;
+}
+.bilgiustu h3 {
+    font-weight: 8;
+    font-size: 14px;
+     color: rgb(175, 175, 175);
+  
+}
+.bilgiustu h2 {
+    font-size: 14px;
+font-weight: normal;
+}
+.text{
+    background-color: white;
+    position: absolute;
+    margin-top: 125%;
+    z-index: 200;    
+    margin-left: 22px;
+}
+.text h3{
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 21px;
+    line-height: 36px;
+    letter-spacing: 0.02em;
+    color: #110E47;
+}
+.text h4{
+ 
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 0.03em;
+    color: #9C9C9C;
+
+}
+.cast{width: 100%;
+    position: absolute;
+    margin-top: 175%;
+    z-index: 200;
+    display: flex;
+    justify-content: space-between;
+}
+.cast h3{   font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 36px;
+    letter-spacing: 0.02em;
+    color: #110E47;
+    margin-left: 20px;
+}
+.cast button{
+    border: 1px solid #b7b7b7;
+    border-radius: 100px;
+    opacity: 0.4;
+    gap: 10px;
+    width: 65px;
+    height: 24px;
+    font-size: 12px;
+    background-color: white;
+margin-right: 20px;
+}
+.Castes{
+    width: 90%;
+    position: absolute;
+    margin-top: 187%;
+    z-index: 200;
+    display: flex;
+    justify-content: space-between; 
+    padding-right: 20px;
+}
+.Cast1{
+
+padding-left: 15px;
+
+   
+}
+.Cast1 p{
+    font-family: 'Mulish';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+letter-spacing: 0.02em;
+
+color: #110E47; 
+}

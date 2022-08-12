@@ -88,7 +88,7 @@ namespace HomeWork
         }
         private static bool CheckIfCvvValidity(string cvv)
         {
-            if (Int32.Parse(cvv) > 999 || Int32.Parse(cvv) < 0 || cvv.Length != 3)
+            if (cvv.Length != 3)
             {
                 return false;
             }
@@ -106,18 +106,26 @@ namespace HomeWork
         }
         private static bool CheckIfExpireDateValidity(string ExpireDate)
         {
-            string result = DateTime.Now.ToString("yy");
-            int dateOfYear = Int16.Parse(result);
-            string[] dates = ExpireDate.Split(new char[] { '/' });
-            int[] dateIntFormat = Array.ConvertAll(dates, int.Parse);
+            if (ExpireDate.Contains("/"))
+            {
+                string result = DateTime.Now.ToString("yy");
+                int dateOfYear = Int16.Parse(result);
+                string[] dates = ExpireDate.Split(new char[] { '/' });
+                int[] dateIntFormat = Array.ConvertAll(dates, int.Parse);
 
-            if ((dateIntFormat[0] <= DateTime.Now.Month
-                && dateIntFormat[1] < dateOfYear) || (dateIntFormat[1] < dateOfYear)
-                || (ExpireDate.Length != 5 || dateIntFormat[0] > 12 || dateIntFormat[0] < 1))
+                if ((dateIntFormat[0] <= DateTime.Now.Month
+                   && dateIntFormat[1] < dateOfYear) || (dateIntFormat[1] < dateOfYear)
+                   || (ExpireDate.Length != 5 || dateIntFormat[0] > 12 || dateIntFormat[0] < 1))
+                {
+                    return false;
+                }
+                return true;
+            }
+            else
             {
                 return false;
             }
-            return true;
+            
         }
         private static string CreditCardInfo(CreditCard creditCard)
         {
