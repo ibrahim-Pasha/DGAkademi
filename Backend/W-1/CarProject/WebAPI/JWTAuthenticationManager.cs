@@ -24,7 +24,7 @@ namespace WebApi
         {
             if (!users.Any(x => x.Key == userName && x.Value == Password))
             {
-                return null;
+                return "kullancı veya şifre yalnış";
             }
             var tokenHandler = new JwtSecurityTokenHandler();
             var tokenKey = Encoding.ASCII.GetBytes(_key);

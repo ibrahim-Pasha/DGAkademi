@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entity.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class BMW : ICar
+    public class BMW : IBMW
     {
         public string Brand { get { return "BMW"; } }
         public string Doors { get { return "2"; } }

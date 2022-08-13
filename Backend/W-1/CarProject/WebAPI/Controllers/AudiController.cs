@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Entity.Abstract;
 
 namespace WebApi.Controllers
 {
@@ -14,12 +15,16 @@ namespace WebApi.Controllers
     [ApiController]
     public class AudiController : ControllerBase
     {
-        Audi audi = new Audi();
+       private readonly IAudi _audi;
+        public AudiController(IAudi audi)
+        {
+            _audi = audi;
+        }
 
         [HttpGet("GetAudiDetile")]
         public string GetBrand()
         {
-            return audi.GetAudiDetiles();
+            return _audi.GetAudiDetiles();
         }
     }
 }

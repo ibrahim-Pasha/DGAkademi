@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Entity.Abstract;
 
 namespace WebApi.Controllers
 {
@@ -14,12 +15,16 @@ namespace WebApi.Controllers
     [ApiController]
     public class BMWController : ControllerBase
     {
-        BMW bmw = new BMW();
+       private readonly IBMW _bmw;
+        public BMWController(IBMW bmw)
+        {
+            _bmw = bmw;
+        }
 
         [HttpGet("GetBmwDetile")]
         public string GetBrand()
         {
-            return bmw.GetBmwDetiles();
+            return _bmw.GetBmwDetiles();
         }
     }
 }

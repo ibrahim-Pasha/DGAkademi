@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Entity.Abstract;
 
 namespace WebApi.Controllers
 {
@@ -15,12 +16,16 @@ namespace WebApi.Controllers
     [ApiController]
     public class MercedesController : ControllerBase
     {
-        Mercedes mercedes = new Mercedes();
+      private readonly  IMercedes _mercedes;
+        public MercedesController(IMercedes mercedes )
+        {
+            _mercedes = mercedes;
+        }
 
         [HttpGet("GetMercedesDetile")]
         public string GetBrand()
         {
-            return mercedes.GetMercedesDetiles();
+            return _mercedes.GetMercedesDetiles();
         }
     }
 }

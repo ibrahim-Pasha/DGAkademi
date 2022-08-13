@@ -1,4 +1,5 @@
 ﻿
+using Entity.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Audi : ICar
+    public class Audi : IAudi
     {
 
         public string Brand { get { return "Audi"; } }

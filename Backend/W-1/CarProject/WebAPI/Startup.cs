@@ -1,3 +1,5 @@
+using Entities;
+using Entity.Abstract;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -45,7 +47,9 @@ namespace WebApi
                 };
             });
             services.AddSingleton<IJWTAuthenticationManager>(new JWTAuthenticationManager(key));
-
+            services.AddTransient<IAudi, Audi>();
+            services.AddTransient<IMercedes, Mercedes>();
+            services.AddTransient<IBMW, BMW>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
