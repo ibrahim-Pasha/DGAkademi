@@ -16,7 +16,7 @@ namespace WebApi.Controllers
     {
         Audi audi = new Audi();
 
-        [HttpGet("GetBmwDetile")]
+        [HttpGet("GetAudiDetile")]
         public string GetBrand()
         {
             return audi.GetAudiDetiles();

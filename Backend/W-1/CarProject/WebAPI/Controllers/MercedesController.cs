@@ -17,7 +17,7 @@ namespace WebApi.Controllers
     {
         Mercedes mercedes = new Mercedes();
 
-        [HttpGet("GetBmwDetile")]
+        [HttpGet("GetMercedesDetile")]
         public string GetBrand()
         {
             return mercedes.GetMercedesDetiles();
