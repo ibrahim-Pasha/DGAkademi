@@ -13,7 +13,6 @@ namespace HW_2
         {
             optionsBuilder.UseSqlServer(@"server=(localdb)\MSSQLLocalDB;Database=School;Trusted_connection=true;Integrated Security=true");
         }
-        public DbSet<Class> Classes { get; set; }
         public DbSet<Student> Students { get; set; }
     }
 }
