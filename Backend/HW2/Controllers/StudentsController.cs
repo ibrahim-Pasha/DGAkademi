@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 
 namespace HW_2.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class StudentsController : ControllerBase
     {
         IStudentService _studentService = new IStudentService();
       
     
-        [HttpGet]
+        [HttpGet("getAll-students")]
         public List<Student> GetAllStudents()
         {
             using (HW_2Context context = new HW_2Context())
@@ -26,7 +26,7 @@ namespace HW_2.Controllers
             };
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("Get-Students-By-{id}")]
         public Student Get(int id)
         {
             using (HW_2Context context = new HW_2Context())
@@ -35,7 +35,7 @@ namespace HW_2.Controllers
             };
         }
 
-        [HttpPost]
+        [HttpPost("Add-Student")]
         public void Add(Student student)
         {
             using (HW_2Context context = new HW_2Context())
@@ -46,7 +46,7 @@ namespace HW_2.Controllers
             }
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("Update-Student-{id}")]
         public IActionResult Update([FromBody]Student student,int id)
         {
             using (HW_2Context context = new HW_2Context())
@@ -56,7 +56,7 @@ namespace HW_2.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("Delete-Student{id}")]
         public void Delete(Student student)
         {
             using (HW_2Context context = new HW_2Context())
