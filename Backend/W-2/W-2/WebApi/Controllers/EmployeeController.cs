@@ -22,7 +22,7 @@ namespace WebApi.Controllers
             _Context = context;
         }
 
-        [HttpPost("Add-Employee")]
+        [HttpPost("Add")]
         public void Add(Employee employee)
         {
             var addedEntity = _Context.Entry(employee);
@@ -30,20 +30,22 @@ namespace WebApi.Controllers
             _Context.SaveChanges();
         }
 
-        [HttpPut("Update-Employee-{id}")]
-        public IActionResult Update([FromBody] Employee employee, int id)
+        [HttpPut("Update")]
+        public IActionResult Update([FromBody] Employee employee, [FromHeader] int id)
         {
             var _employee = _Context.Employees.FirstOrDefault(s => s.EmployeeId == id);
             if (_employee != null)
             {
-                _employee = employee;
+                _employee.Name = employee.Name;
+                _employee.SurName = employee.SurName;
+                _employee.Salary = employee.Salary;
                 _Context.SaveChanges();
                 return Ok("Employee Updated");
             }
             return BadRequest("Employee Can't Update");
         }
 
-        [HttpDelete("Delete-Employee{id}")]
+        [HttpDelete("Delete{id}")]
         public void Delete(int id)
         {
             Employee employee = _Context.Set<Employee>().Where(s => s.EmployeeId == id).SingleOrDefault();
@@ -51,13 +53,13 @@ namespace WebApi.Controllers
             DelEntity.State = EntityState.Deleted;
             _Context.SaveChanges();
         }
-        [HttpGet("getAll-Employee")]
+        [HttpGet("getAll")]
         public List<Employee> GetAllEmployees()
         {
 
             return _Context.Set<Employee>().ToList();
         }
-        [HttpGet("Get-Employee-By-{id}")]
+        [HttpGet("GetBy{id}")]
         public Employee Get(int id)
         {
             return _Context.Set<Employee>().Where(s => s.EmployeeId == id).SingleOrDefault();

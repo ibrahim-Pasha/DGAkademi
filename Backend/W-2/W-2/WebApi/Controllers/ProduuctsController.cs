@@ -21,7 +21,7 @@ namespace WebApi.Controllers
             _Context = context;
         }
         [Authorize(Roles = "Manager,Purchasing_Department")]
-        [HttpPost("Add-Produuct")]
+        [HttpPost("Add")]
         public void Add(Product product)
         {
             var addedEntity = _Context.Entry(product);
@@ -29,20 +29,22 @@ namespace WebApi.Controllers
             _Context.SaveChanges();
         }
         [Authorize(Roles = "Manager,Purchasing_Department")]
-        [HttpPut("Update-Product-{id}")]
-        public IActionResult Update([FromBody] Product product, int id)
+        [HttpPut("Update")]
+        public IActionResult Update([FromBody] Product product, [FromHeader] int id)
         {
             var _product = _Context.Products.FirstOrDefault(s => s.ProductId == id);
             if (_product != null)
             {
-                _product = product;
+                _product.CategoryId = product.CategoryId;
+                _product.ProductName = product.ProductName;
+                _product.UnitPrice = product.UnitPrice;
                 _Context.SaveChanges();
                 return Ok("Product Updated");
             }
             return BadRequest("Product Can't Update");
         }
         [Authorize(Roles = "Manager,Purchasing_Department")]
-        [HttpDelete("Delete-Product{id}")]
+        [HttpDelete("Delete{id}")]
         public void Delete(int id)
         {
             Product product = _Context.Set<Product>().Where(s => s.ProductId == id).SingleOrDefault();
@@ -51,14 +53,14 @@ namespace WebApi.Controllers
             _Context.SaveChanges();
         }
         [AllowAnonymous]
-        [HttpGet("getAll-Product")]
+        [HttpGet("getAll")]
         public List<Product> GetAllEmployees()
         {
 
             return _Context.Set<Product>().ToList();
         }
         [AllowAnonymous]
-        [HttpGet("Get-Product-By-{id}")]
+        [HttpGet("GetBy{id}")]
         public Product Get(int id)
         {
             return _Context.Set<Product>().Where(s => s.ProductId == id).SingleOrDefault();

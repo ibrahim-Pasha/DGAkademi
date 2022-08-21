@@ -23,7 +23,7 @@ namespace WebApi.Controllers
             _Context = context;
         }
 
-        [HttpPost("Add-Order")]
+        [HttpPost("Add")]
         public void Add(Order order)
         {
             var addedEntity = _Context.Entry(order);
@@ -31,20 +31,23 @@ namespace WebApi.Controllers
             _Context.SaveChanges();
         }
 
-        [HttpPut("Update-Order-{id}")]
-        public IActionResult Update([FromBody] Order order, int id)
+        [HttpPut("Update")]
+        public IActionResult Update([FromBody] Order order,[FromHeader] int id)
         {
             var _order = _Context.Orders.FirstOrDefault(s => s.OrderId == id);
             if (_order != null)
             {
-                _order = order;
+                _order.CustomerId = order.CustomerId;
+                _order.ShipName = order.ShipName;
+                _order.ShipAddress = order.ShipAddress;
+                _order.OrderDate = order.OrderDate;
                 _Context.SaveChanges();
                 return Ok("OrderUpdated");
             }
             return BadRequest("order Can't Update");
         }
 
-        [HttpDelete("Delete-Order{id}")]
+        [HttpDelete("Delete{id}")]
         public void Delete(int id)
         {
             Order order = _Context.Set<Order>().Where(s => s.OrderId == id).SingleOrDefault();
@@ -53,14 +56,14 @@ namespace WebApi.Controllers
             _Context.SaveChanges();
         }
 
-        [HttpGet("getAll-Order")]
+        [HttpGet("getAll")]
         public List<Order> GetAllEmployees()
         {
 
             return _Context.Set<Order>().ToList();
         }
 
-        [HttpGet("Get-Order-By-{id}")]
+        [HttpGet("GetBy{id}")]
         public Order Get(int id)
         {
             return _Context.Set<Order>().Where(s => s.OrderId == id).SingleOrDefault();

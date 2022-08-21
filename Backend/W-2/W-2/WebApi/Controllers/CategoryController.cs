@@ -21,7 +21,7 @@ namespace WebApi.Controllers
             _Context = context;
         }
         [Authorize(Roles = "Manager,Purchasing_Department")]
-        [HttpPost("Add-Category")]
+        [HttpPost("Add")]
         public void Add(Category category)
         {
             var addedEntity = _Context.Entry(category);
@@ -29,20 +29,20 @@ namespace WebApi.Controllers
             _Context.SaveChanges();
         }
         [Authorize(Roles = "Manager,Purchasing_Department")]
-        [HttpPut("Update-Category-{id}")]
-        public IActionResult Update([FromBody] Category category, int id)
+        [HttpPut("Update")]
+        public IActionResult Update([FromBody] Category categoryName,[FromHeader] int id)
         {
             var _category = _Context.Categories.FirstOrDefault(s => s.CategoryId == id);
             if (_category != null)
             {
-                _category = category;
+                _category.CategoryName = categoryName.CategoryName;
                 _Context.SaveChanges();
                 return Ok("Category Updated");
             }
             return BadRequest("Category Can't Update");
         }
         [Authorize(Roles = "Manager,Purchasing_Department")]
-        [HttpDelete("Delete-Category{id}")]
+        [HttpDelete("Delete{id}")]
         public void Delete(int id)
         {
             Category category = _Context.Set<Category>().Where(s => s.CategoryId == id).SingleOrDefault();
@@ -51,14 +51,13 @@ namespace WebApi.Controllers
             _Context.SaveChanges();
         }
         [AllowAnonymous]
-        [HttpGet("getAll-Category")]
+        [HttpGet("getAll")]
         public List<Category> GetAllCategories()
         {
-
             return _Context.Set<Category>().ToList();
         }
         [AllowAnonymous]
-        [HttpGet("Get-Category-By-{id}")]
+        [HttpGet("GetBy{id}")]
         public Category Get(int id)
         {
             return _Context.Set<Category>().Where(s => s.CategoryId == id).SingleOrDefault();
