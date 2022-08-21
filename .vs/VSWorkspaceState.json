@@ -1,13 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Backend",
-    "\\Backend\\W-1",
-    "\\Backend\\W-1\\CarProject",
-    "\\Backend\\W-1\\CarProject\\WebAPI",
-    "\\Backend\\W-1\\CarProject\\WebAPI\\Controllers",
-    "\\Backend\\W-1\\CarProject\\WebAPI\\Properties"
+    ""
   ],
-  "SelectedNode": "\\Backend\\W-1\\CarProject\\WebAPI\\appsettings.Development.json",
+  "SelectedNode": "\\CarProject.sln",
   "PreviewInSolutionExplorer": false
 }
