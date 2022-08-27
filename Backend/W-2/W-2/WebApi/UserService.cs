@@ -22,7 +22,8 @@ namespace WebApi
                 Name = name,
                 SurName = surName,
                 UserName = userName,
-                Password = password
+                Password = password,
+                Role ="Customer"
             };
 
             _DgContext.Users.Add(user);
