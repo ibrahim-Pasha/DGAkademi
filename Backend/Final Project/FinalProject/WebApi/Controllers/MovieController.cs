@@ -58,6 +58,8 @@ namespace WebApi.Controllers
         {
             return _Context.Set<Movie>().Where(M => M.Popular == true).ToList();
         }
+
+                             /********Methods********/
         /// <summary>
         /// To Add new Movie
         /// </summary>
@@ -83,7 +85,7 @@ namespace WebApi.Controllers
             }
             return Ok();
         }
-        /***Methods****/
+        
         /// <summary>
         /// To Update Movie data
         /// </summary>

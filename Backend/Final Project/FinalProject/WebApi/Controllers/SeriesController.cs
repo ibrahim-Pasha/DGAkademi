@@ -59,7 +59,7 @@ namespace WebApi.Controllers
         {
             return _Context.Set<Series>().Where(M => M.Popular == true).ToList();
         }
-        /*****Methods******/
+                        /*****Methods******/
 
         /// <summary>
         /// To Add new Series

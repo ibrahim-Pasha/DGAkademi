@@ -32,7 +32,7 @@ namespace WebApi.Controllers
         }
 
         /// <summary>
-        /// Chake User and create Token for him
+        /// Check User and create Token for him
         /// </summary>
         /// <param name="loginModel">string UserName && string Password</param>
         /// <returns></returns>
